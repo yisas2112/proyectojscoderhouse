@@ -4,52 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/index.css">
-    
-    
-
+    <link rel="stylesheet" href="css/index.css">        
     <title>Proyecto Final</title>
 
 </head>
 <body>
-    <div id="listadoCursos" class="m-4">
-    </div>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark default-color">
+            <a class="navbar-brand" href="#"><strong>Coder House</strong></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contacto</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav nav-flex-icons">
+                    <li class="nav-item">
+                        <a class="nav-link"><img class="icons-redes" src="/images/facebook.svg" alt="Facebook"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"><img class="icons-redes" src="/images/linkedin.svg" alt="Linkedin"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"><img class="icons-redes" src="/images/instagram.svg" alt="Instagram"></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    
+    </header>
+    <section>    
+        <div id="listadodeCursos" class="container align-items-center text-center" >
+            <h1 class="my-3">Cursos de Disponibles</h1>
+            <div class="list_Cursos" id="horariohtml">
+                <h3 class="my-3">Curso de HTML</h3>
+                <button class="show__Horarios btn rounded-lg" onclick='verHorariosHTML("horarios")' >Ver Horarios</button>
+            </div>
+            <div class="list_Cursos" id="horariocss">
+                <h3 class="my-3">Curso de CSS</h3>
+                <button class="show__Horarios btn rounded-lg" onclick='verHorariosCSS("horarios")'>Ver Horarios</button>            
+            </div>
+            <div class="list_Cursos" id="horariojs">
+                <h3 class="my-3">Curso de JavaScript</h3>
+                <button class="show__Horarios btn rounded-lg" onclick='verHorariosJS("horarios")'>Ver Horarios</button>
+            </div>
+            <div class="list_Cursos" id="horarioR">
+                <h3 class="my-3">Curso de React</h3>
+                <button class="show__Horarios btn rounded-lg" onclick='verHorariosR("horarios")'>Ver Horarios</button>
+            </div>
+            <div class="list_Cursos" id="horarioMk">
+                <h3 class="my-3">Curso de   Marketing Digital</h3>
+                <button class="show__Horarios btn rounded-lg" onclick='verHorariosMK("horarios")'>Ver Horarios</button>
+            </div>        
+        </div>
+    </section>
+    <section class="container__form">
+        <div id="cursoSeleccionado" class="container text-center">
+            <div id="title"></div>
+            <h2  class="h2">Por favor llene el formulario para completar la inscripción</h2>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" class="form-control">
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" class="form-control">
+            <label for="mail">Email:</label>
+            <input type="email" id="mail" class="form-control">
+            <button id="bEnviar" type="button" class="my-2 btn rounded-lg" onclick="obtenerDatos(event)">Enviar</button>
+        </div>
+    </section>
+    <section>
+    <div id="mensajeFinal"  class="container align-items-center text-center"></div>
+    </section>
 
-    <div id="listadodeCursos" class="container align-items-center text-center" >
-        <h2>Cursos de Disponibles</h2>
-        <div class="card" id="horariohtml">
-            <h3 class="my-3 text-secondary">Curso de HTML</h3>
-            <button id="verHorariosHtml" class="btn-primary rounded-lg" onclick='verHorariosHTML("horarios")' >Ver Horarios</button>
-        </div>
-        <div class="card" id="horariocss">
-            <h3 class="my-3 text-secondary">Curso de CSS</h3>
-            <button class="btn-primary rounded-lg" onclick='verHorariosCSS("horarios")'>Ver Horarios</button>            
-        </div>
-        <div class="card" id="horariojs">
-            <h3 class="my-3 text-secondary">Curso de JavaScript</h3>
-            <button class="btn-primary rounded-lg" onclick='verHorariosJS("horarios")'>Ver Horarios</button>
-        </div>
-        <div class="card" id="horarioR">
-            <h3 class="my-3 text-secondary">Curso de React</h3>
-            <button class="btn-primary rounded-lg" onclick='verHorariosR("horarios")'>Ver Horarios</button>
-        </div>
-        <div class="card" id="horarioML">
-            <h3 class="my-3 text-secondary">Curso de   Marketing Digital</h3>
-            <button class="btn-primary rounded-lg" onclick='verHorariosMK("horarios")'>Ver Horarios</button>
-        </div>        
-    </div>
 
-    <div id="cursoSeleccionado" class="container text-center mt-5">
-        <div id="title"></div>
-        <h2  class="h2">Por favor llene el formulario para completar la inscripción</h2>
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" class="form-control">
-        <label for="apellido">Apellido:</label>
-        <input type="text" id="apellido" class="form-control">
-        <label for="mail">Email:</label>
-        <input type="email" id="mail" class="form-control">
-        <button id="bEnviar" type="button" class="my-2 btn-success rounded-lg" onclick="obtenerDatos()">Enviar</button>
-    </div>
 
 
     
@@ -59,9 +97,10 @@
     <script src="js/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    <script src="js/datos.js"></script>
+    <script src="js/datos.json"></script>
+    <script src="js/datos.js"></script>    
     <script src="js/clases.js"></script>
     <script src="js/main.js"></script>        
-    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>    
 </body>
 </html>

@@ -3,6 +3,75 @@ button{
 }
 
 body{
-    background-color:black;
-    color: white;
+    background:  url("https://mdbootstrap.com/img/Photos/Others/img (51).jpg")no-repeat;
+    color: white;        
+}
+
+.navbar{
+    background-color: #2bbbad;
+}
+
+.icons-redes{
+    width: 20px;
+    height: 20px;
+}
+
+.show__Horarios{
+    background-image: linear-gradient(to right, #32be8f, #38d39f, #32be8f);    
+    color: #fff;  
+    width: 100%;         
+    
+}
+
+.show__Horarios:hover{    
+    background-size: 200%;
+    background-position: right;
+    transition: .5s;   
+}
+
+.list_Cursos{
+    width: 100%;
+    color: #fff;
+    background: none;
+}
+
+.list_horarios{
+    background: none;
+}
+
+.btn__elegir{    
+    width: 98%;
+    align-self: center;
+    background-image: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.btn__elegir:hover{
+    
+    background-size: 200%;
+    background-position: right;
+    transition: .5s;
+    color: black;   
+ 
+}
+
+#bEnviar{
+    background-image: linear-gradient(to right, #32be8f, #38d39f, #32be8f);    
+    color: #fff;  
+    width: 100px;     
+}
+
+#bEnviar:hover{    
+    background-size: 200%;
+    background-position: right;
+    transition: .5s;   
+}
+
+.container__form{
+    margin-top: 200px;
+    align-items: center;
+    justify-content: center;
 }

@@ -42,11 +42,24 @@ class CursosDom{
         })
         
     }
+    static ocultarElement(elemento){
+        $(function(){
+            $(elemento).slideUp(2000);
+        })
+        
+    }
     static mostrar(id, elemento){
         $(id).click(function(){
             $(elemento).slideToggle(2000);
         })
     }
+    static borrar(id, elemento){
+        $(id).click(function(){
+            $(elemento).remove();
+        })
+        
+    }
+
 };
 
 class Curso{
@@ -65,11 +78,15 @@ class Persona{
         this.nombre = nombre;
         this.apellido = apellido;
         this.mail = mail;
-        this.edad = edad;
     }
 
-    
+    mensajeButton(){
+        return `Gracias ${this.nombre} ${this.apellido} a las brevedad nos comunicaremos con vos para concretar el pago`;
+        
+    }
 }
+
+
 
   
 
