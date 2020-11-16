@@ -70,8 +70,18 @@ body{
     transition: .5s;   
 }
 
-.container__form{
-    margin-top: 200px;
+.container__form{    
     align-items: center;
     justify-content: center;
+    background: none;
+}
+
+#mensajeFinal
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    color: #fff;   
+    background: none;
 }

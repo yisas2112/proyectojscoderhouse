@@ -81,7 +81,7 @@ class Persona{
     }
 
     mensajeButton(){
-        return `Gracias ${this.nombre} ${this.apellido} a las brevedad nos comunicaremos con vos para concretar el pago`;
+        return `Gracias ${this.nombre} ${this.apellido} a las brevedad nos comunicaremos con vos para concretar el pago ;)`;
         
     }
 }

@@ -337,8 +337,7 @@ function obtenerDatos(){
   personaForm.mail = CursosDom.obtenerElementoID('#mail').value;
   let element = CursosDom.crearElemento("div");
   let titulo = CursosDom.crearElemento("h1");
-  CursosDom.agregarClase(titulo,"card");
-  CursosDom.agregarClase(titulo,'text-secondary');  
+  CursosDom.agregarID(element, "mensaje");
   CursosDom.agregarClase(titulo, 'h1');
   let contenido = personaForm.mensajeButton();
   CursosDom.agregarHijo(mensaje,element);
