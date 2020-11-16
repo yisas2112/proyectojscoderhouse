@@ -76,12 +76,12 @@ body{
     background: none;
 }
 
-#mensajeFinal
+#mensaje
 {
+    height: 500px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    height: 500px;
+    justify-content: center; 
     color: #fff;   
     background: none;
 }
