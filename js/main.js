@@ -4,7 +4,6 @@ $(function(){
   $("#cursoSeleccionado").hide();
 })
 
-
 let hHtml = CursosDom.obtenerElementoID('#horariohtml');
 CursosDom.borrar(hHtml,'.contenedorCSS');
 CursosDom.borrar(hHtml,'.contenedorJs');
@@ -21,10 +20,11 @@ function verHorariosHTML(valor){
           for(const dato1 of datos["1. Html"]){  
               let contenedor = CursosDom.crearElemento("div");
               CursosDom.agregarID(contenedor,'html');                      
-              let titulo = CursosDom.crearElemento("h4");                                         
+              let titulo = CursosDom.crearElemento("h4");                                                       
               CursosDom.agregarClase(contenedor,"contenedorHTML");                      
               CursosDom.agregarClase(contenedor,"list_horarios");
               CursosDom.agregarINNER(titulo,dato1.diayhorario);                            
+              CursosDom.agregarHijo(titulo,` $${dato1.precio}`);
               CursosDom.agregarHijo(contenedor,titulo);        
               CursosDom.agregarHijo(hHtml ,contenedor);
               let boton = CursosDom.crearElemento("button");
@@ -62,7 +62,8 @@ function verHorariosCSS(valor){
             let titulo = CursosDom.crearElemento("h4");            
             CursosDom.agregarClase(contenedor,"contenedorCSS");
             CursosDom.agregarClase(contenedor,"list_horarios");
-            CursosDom.agregarINNER(titulo,dato1.diayhorario);            
+            CursosDom.agregarINNER(titulo,dato1.diayhorario);
+            CursosDom.agregarHijo(titulo,` $${dato1.precio}`);            
             CursosDom.agregarHijo(contenedor,titulo);
             CursosDom.agregarHijo(hCss,contenedor);
             let boton = CursosDom.crearElemento("button");
@@ -99,7 +100,8 @@ function verHorariosJS(valor){
             let titulo = CursosDom.crearElemento("h4");            
             CursosDom.agregarClase(contenedor,"contenedorJs");
             CursosDom.agregarClase(contenedor,"list_horarios");
-            CursosDom.agregarINNER(titulo,dato1.diayhorario);            
+            CursosDom.agregarINNER(titulo,dato1.diayhorario);
+            CursosDom.agregarHijo(titulo,` $${dato1.precio}`);            
             CursosDom.agregarHijo(contenedor,titulo);
             CursosDom.agregarHijo(hJS,contenedor);
             let boton = CursosDom.crearElemento("button");
@@ -136,7 +138,8 @@ function verHorariosR(valor){
             let titulo = CursosDom.crearElemento("h4");            
             CursosDom.agregarClase(contenedor,"contenedorReact");
             CursosDom.agregarClase(contenedor,"list_horarios");
-            CursosDom.agregarINNER(titulo,dato1.diayhorario);            
+            CursosDom.agregarINNER(titulo,dato1.diayhorario);
+            CursosDom.agregarHijo(titulo,` $${dato1.precio}`);            
             CursosDom.agregarHijo(contenedor,titulo);
             CursosDom.agregarHijo(hReact,contenedor);
             let boton = CursosDom.crearElemento("button");
@@ -173,7 +176,8 @@ function verHorariosMK(valor){
             let titulo = CursosDom.crearElemento("h4");            
             CursosDom.agregarClase(contenedor,"contenedorMk");
             CursosDom.agregarClase(contenedor,"list_horarios");
-            CursosDom.agregarINNER(titulo,dato1.diayhorario);            
+            CursosDom.agregarINNER(titulo,dato1.diayhorario);
+            CursosDom.agregarHijo(titulo,` $${dato1.precio}`);            
             CursosDom.agregarHijo(contenedor,titulo);
             CursosDom.agregarHijo(hMK,contenedor);
             let boton = CursosDom.crearElemento("button");
