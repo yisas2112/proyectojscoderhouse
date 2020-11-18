@@ -4,13 +4,17 @@ $(function(){
   $("#cursoSeleccionado").hide();
 })
 
+//ID dónde se creará la info solicitada por el usuario
 let hHtml = CursosDom.obtenerElementoID('#horariohtml');
+
+//Borra los cursos que están abiertos para que no se llene de información la pantalla
 CursosDom.borrar(hHtml,'.contenedorCSS');
 CursosDom.borrar(hHtml,'.contenedorJs');
 CursosDom.borrar(hHtml,'.contenedorReact');
 CursosDom.borrar(hHtml,'.contenedorMk');
 
 
+//Creación de div con los horarios y precio de los cursos
 function verHorariosHTML(valor){
   if(valor == 'horarios'){        
     if($('#horariohtml').children().length < 3){
@@ -44,13 +48,15 @@ function verHorariosHTML(valor){
   }
 };
 
-
+//ID dónde se creará la info solicitada por el usuario
 let hCss = CursosDom.obtenerElementoID("#horariocss");
+//Borra los cursos que están abiertos para que no se llene de información la pantalla
 CursosDom.borrar(hCss,'.contenedorHTML');
 CursosDom.borrar(hCss,'.contenedorJs');
 CursosDom.borrar(hCss,'.contenedorReact');
 CursosDom.borrar(hCss,'.contenedorMk');
 
+//Creación de div con los horarios y precio de los cursos
 function verHorariosCSS(valor){
   if(valor == 'horarios'){
     if($('#horariocss').children().length < 3){
@@ -83,12 +89,16 @@ function verHorariosCSS(valor){
   }
 };
 
+//ID dónde se creará la info solicitada por el usuario
 let hJS = CursosDom.obtenerElementoID("#horariojs");
+
+//Borra los cursos que están abiertos para que no se llene de información la pantalla
 CursosDom.borrar(hJS,'.contenedorHTML');
 CursosDom.borrar(hJS,'.contenedorCSS');
 CursosDom.borrar(hJS,'.contenedorReact');
 CursosDom.borrar(hJS,'.contenedorMk');
 
+//Creación de div con los horarios y precio de los cursos
 function verHorariosJS(valor){
   if(valor == 'horarios'){
     if($('#horariojs').children().length < 3){
@@ -121,12 +131,16 @@ function verHorariosJS(valor){
   } 
 };
 
+//ID dónde se creará la info solicitada por el usuario
 let hReact = CursosDom.obtenerElementoID("#horarioR");
+
+//Borra los cursos que están abiertos para que no se llene de información la pantalla
 CursosDom.borrar(hReact,'.contenedorHTML');
 CursosDom.borrar(hReact,'.contenedorCSS');
 CursosDom.borrar(hReact,'.contenedorJs');
 CursosDom.borrar(hReact,'.contenedorMk');
 
+//Creación de div con los horarios y precio de los cursos
 function verHorariosR(valor){
   if(valor == 'horarios'){
     if($('#horarioR').children().length < 3){
@@ -159,12 +173,15 @@ function verHorariosR(valor){
   }
 }
 
+//ID dónde se creará la info solicitada por el usuario
 let hMK = CursosDom.obtenerElementoID("#horarioMk");
+//Borra los cursos que están abiertos para que no se llene de información la pantalla
 CursosDom.borrar(hMK,'.contenedorHTML');
 CursosDom.borrar(hMK,'.contenedorCSS');
 CursosDom.borrar(hMK,'.contenedorJs');
 CursosDom.borrar(hMK,'.contenedorReact');
 
+//Creación de div con los horarios y precio de los cursos
 function verHorariosMK(valor){
   if(valor == 'horarios'){
     if($('#horarioMk').children().length < 5){
@@ -197,7 +214,7 @@ function verHorariosMK(valor){
   }
 };
 
-
+//Valida si el curso existe en la base de datos
 function validadCursoHTML(e){
   let target = e.target;    
   cursoInscripto.id = target.id;  
@@ -208,7 +225,8 @@ function validadCursoHTML(e){
           for(const datos of data){
             for(const dato1 of datos["1. Html"]){ 
                 if (target.id == dato1.id){      
-                cursoInscripto.diaHorario  =  dato1.diayhorario;  
+                cursoInscripto.diaHorario  =  dato1.diayhorario;
+                cursoInscripto.precio = 15000;  
                 CursosDom.cargadePagina(verCursoElegido(cursoInscripto));                   
                 break;     
                 }
@@ -217,8 +235,7 @@ function validadCursoHTML(e){
     }
 }
 
-
-
+//Valida si el curso existe en la base de datos
 function validadCursoCSS(e){
   let target = e.target;    
   cursoInscripto.id = target.id;  
@@ -231,6 +248,7 @@ function validadCursoCSS(e){
             for(const dato1 of datos["2. Css"]){  
               if (target.id == dato1.id){      
               cursoInscripto.diaHorario  =  dato1.diayhorario;
+              cursoInscripto.precio = 10000;
               CursosDom.cargadePagina(verCursoElegido(cursoInscripto));
               console.log(cursoInscripto);
               break;     
@@ -241,7 +259,7 @@ function validadCursoCSS(e){
   }
 }
 
-
+//Valida si el curso existe en la base de datos
 function validadCursoJS(e){
   let target = e.target;    
   cursoInscripto.id = target.id;  
@@ -254,6 +272,7 @@ function validadCursoJS(e){
             for(const dato1 of datos["3. Javascript"]){  
               if (target.id == dato1.id){ 
               cursoInscripto.diaHorario  =  dato1.diayhorario;
+              cursoInscripto.precio = 15000;
               CursosDom.cargadePagina(verCursoElegido(cursoInscripto));
               console.log(cursoInscripto);
               break;     
@@ -263,6 +282,7 @@ function validadCursoJS(e){
   }
 }
 
+//Valida si el curso existe en la base de datos
 function validadCursoR(e){
   let target = e.target;    
   cursoInscripto.id = target.id;  
@@ -275,6 +295,7 @@ function validadCursoR(e){
             for(const dato1 of datos["4. React"]){  
               if (target.id == dato1.id){ 
               cursoInscripto.diaHorario  =  dato1.diayhorario;
+              cursoInscripto.precio = 15000;
               CursosDom.cargadePagina(verCursoElegido(cursoInscripto));
               console.log(cursoInscripto);
               break;     
@@ -285,7 +306,7 @@ function validadCursoR(e){
 }
 
 
-
+//Valida si el curso existe en la base de datos
 function validadCursoMK(e){
   let target = e.target;    
   cursoInscripto.id = target.id;  
@@ -309,7 +330,7 @@ function validadCursoMK(e){
 
 
 
-
+//Muestra el curso seleccionado por el usuario
 let cursoCompleto = CursosDom.obtenerElementoID('#title');
 function verCursoElegido(valor){
   let cursoFinal = valor

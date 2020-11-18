@@ -63,21 +63,23 @@ class CursosDom{
 };
 
 class Curso{
-    constructor(id,nombre, diaHorario){
+    constructor(id,nombre, diaHorario,precio){
             this.id = id;
             this.nombre = nombre;          
             this.diaHorario = diaHorario;
+            this.precio = precio;
             }                     
             verCursoSeleccionado() {
-                  return "Haz seleccionado el curso de: "+ this.nombre +" "+"Los días "+ this.diaHorario;            
+                  return "Haz seleccionado el curso de: "+ this.nombre +" "+"Los días "+ this.diaHorario + " $"+ this.precio ;            
             }          
 };
 
 class Persona{
-    constructor(nombre, apellido, mail,edad){
+    constructor(nombre, apellido, mail){
         this.nombre = nombre;
         this.apellido = apellido;
         this.mail = mail;
+        
     }
 
     mensajeButton(){
